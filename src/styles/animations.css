@@ -1,0 +1,133 @@
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide down for collapsible sections */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+    transform: translateY(0);
+  }
+}
+
+/* Slide up for closing sections */
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    max-height: 1000px;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Glow pulse for selected items */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(196, 162, 88, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(196, 162, 88, 0.4);
+  }
+}
+
+/* Subtle float for icons */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Shield shimmer effect */
+@keyframes shieldShimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Modal backdrop fade */
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Modal content scale in */
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Checkbox check animation */
+@keyframes checkMark {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Utility classes */
+.animate-fadeIn {
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown var(--transition-normal) ease forwards;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.animate-textReveal {
+  animation: textReveal var(--transition-normal) ease forwards;
+}
+
+/* REMOVED stagger-children - was causing visibility issues */
+/* Items are now always visible */

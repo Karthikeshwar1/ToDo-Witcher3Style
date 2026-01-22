@@ -1,0 +1,83 @@
+.subtask-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subtask-list--empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.9rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-bottom: 1px solid var(--color-divider);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.subtask-item:last-child {
+  border-bottom: none;
+}
+
+.subtask-item:hover {
+  background: var(--color-bg-hover);
+}
+
+.subtask-checkbox {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.subtask-checkbox:hover {
+  color: var(--color-text-gold-bright);
+  transform: scale(1.1);
+}
+
+.subtask-checkbox svg {
+  width: 100%;
+  height: 100%;
+}
+
+.subtask-checkbox__border {
+  transition: fill var(--transition-fast);
+}
+
+.subtask-item--completed .subtask-checkbox {
+  color: var(--color-accent-green);
+}
+
+.subtask-item--completed .subtask-checkbox__border {
+  fill: rgba(106, 173, 106, 0.3);
+}
+
+.subtask-checkbox__check {
+  stroke-dasharray: 24;
+  animation: checkMark 0.3s ease forwards;
+}
+
+.subtask-text {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-body);
+  padding-top: 3px;
+  transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.subtask-item--completed .subtask-text {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-text-muted);
+}

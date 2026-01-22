@@ -1,0 +1,101 @@
+/* ============================================
+   DARK THEME (Default - Witcher 3 inspired)
+   ============================================ */
+:root,
+[data-theme="dark"] {
+  /* Background Colors */
+  --color-bg-dark: #0f0e0d;
+  --color-bg-panel: #1a1816;
+  --color-bg-panel-alt: #151311;
+  --color-bg-hover: rgba(232, 201, 103, 0.12);
+  --color-bg-selected: rgba(232, 201, 103, 0.2);
+  --color-bg-card: rgba(40, 35, 30, 0.7);
+  
+  /* Text Colors */
+  --color-text-gold: #f0d078;
+  --color-text-gold-bright: #ffd700;
+  --color-text-cream: #d8c8a8;
+  --color-text-muted: #9a8a70;
+  --color-text-dark: #5d5244;
+  --color-text-body: #d0c4a8;
+  
+  /* Accent Colors */
+  --color-accent-red: #c43c3c;
+  --color-accent-red-bright: #e04545;
+  --color-accent-red-dark: #8b2323;
+  --color-accent-green: #6aad6a;
+  --color-accent-blue: #6a9ac4;
+  
+  /* UI Colors */
+  --color-border: #4d4536;
+  --color-border-light: #5d5546;
+  --color-divider: #3d3830;
+  --color-scrollbar: #4d4536;
+  --color-scrollbar-hover: #5d5546;
+  
+  /* Shadows & Glows */
+  --shadow-panel: 0 0 40px rgba(0, 0, 0, 0.5);
+  --shadow-inset: inset 0 0 60px rgba(0, 0, 0, 0.4);
+  --glow-gold: 0 0 10px rgba(232, 201, 103, 0.4);
+  --glow-gold-strong: 0 0 20px rgba(232, 201, 103, 0.6);
+}
+
+/* ============================================
+   LIGHT THEME (Parchment/Medieval style)
+   ============================================ */
+[data-theme="light"] {
+  /* Background Colors */
+  --color-bg-dark: #e8dcc8;
+  --color-bg-panel: #f5ead8;
+  --color-bg-panel-alt: #efe4d2;
+  --color-bg-hover: rgba(100, 60, 30, 0.1);
+  --color-bg-selected: rgba(100, 60, 30, 0.15);
+  --color-bg-card: rgba(255, 250, 240, 0.9);
+  
+  /* Text Colors - HIGH CONTRAST */
+  --color-text-gold: #6b3a10;
+  --color-text-gold-bright: #8b4513;
+  --color-text-cream: #2d1f14;
+  --color-text-muted: #5a4a3a;
+  --color-text-dark: #1a1208;
+  --color-text-body: #3d2a1a;
+  
+  /* Accent Colors */
+  --color-accent-red: #8b2323;
+  --color-accent-red-bright: #a52a2a;
+  --color-accent-red-dark: #5c1818;
+  --color-accent-green: #2e5a2e;
+  --color-accent-blue: #2e4a6a;
+  
+  /* UI Colors */
+  --color-border: #b49a6a;
+  --color-border-light: #c4aa7a;
+  --color-divider: #c4b494;
+  --color-scrollbar: #b49a6a;
+  --color-scrollbar-hover: #a48a5a;
+  
+  /* Shadows & Glows */
+  --shadow-panel: 0 0 40px rgba(0, 0, 0, 0.08);
+  --shadow-inset: inset 0 0 60px rgba(0, 0, 0, 0.03);
+  --glow-gold: 0 0 10px rgba(107, 58, 16, 0.15);
+  --glow-gold-strong: 0 0 20px rgba(107, 58, 16, 0.25);
+}
+
+/* ============================================
+   SHARED VARIABLES (both themes)
+   ============================================ */
+:root {
+  /* Typography */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+  
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+}

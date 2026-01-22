@@ -1,0 +1,412 @@
+.app-layout {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-layout__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-dark);
+  z-index: 0;
+}
+
+/* Dark theme specific background */
+[data-theme="dark"] .app-layout__bg {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(60, 50, 40, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(50, 40, 30, 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, #0f0e0d 0%, #1a1816 50%, #0f0e0d 100%);
+}
+
+/* Light theme specific background - parchment texture */
+[data-theme="light"] .app-layout__bg {
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 250, 240, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(255, 245, 230, 0.6) 0%, transparent 50%),
+    linear-gradient(180deg, #f0e4d0 0%, #e8dcc8 50%, #ddd0b8 100%);
+}
+
+.app-layout__vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+[data-theme="dark"] .app-layout__vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+[data-theme="light"] .app-layout__vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 70%,
+    rgba(139, 90, 43, 0.1) 100%
+  );
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.app-header__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--color-text-gold);
+  text-shadow: 0 0 30px var(--glow-gold);
+}
+
+.app-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-arrow {
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-cream);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-arrow:hover {
+  color: var(--color-text-gold-bright);
+  transform: scale(1.1);
+}
+
+.nav-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-text-cream);
+  text-transform: uppercase;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  color: var(--color-text-cream);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--color-text-gold-bright);
+  border-color: var(--color-text-gold);
+  background: var(--color-bg-hover);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.app-header__level {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.level-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-cream);
+}
+
+.level-value {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-gold);
+}
+
+.level-bar {
+  width: 120px;
+  height: 6px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.level-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-text-gold), var(--color-text-gold-bright));
+}
+
+.level-xp {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-cream);
+}
+
+/* Page dots */
+.page-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.page-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.page-dot--active {
+  opacity: 1;
+  background: var(--color-text-gold);
+  box-shadow: var(--glow-gold);
+}
+
+/* Main content area - with side padding */
+.app-main {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+/* Panels */
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, flex 0.3s ease;
+  min-width: 0;
+}
+
+.panel--collapsed {
+  overflow: hidden;
+  flex: none !important;
+}
+
+.panel__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 1rem;
+  min-height: 0;
+}
+
+/* Left panel */
+.panel--left {
+  border-right: 1px solid var(--color-divider);
+}
+
+.panel--left .panel__content {
+  padding-left: 0.5rem;
+}
+
+/* Middle panel */
+.panel--middle {
+  min-width: 300px;
+}
+
+.panel--middle .panel__content {
+  padding: 0 1.5rem;
+}
+
+/* Right panel */
+.panel--right {
+  border-left: 1px solid var(--color-divider);
+}
+
+.panel--right .panel__content {
+  padding-right: 0.5rem;
+}
+
+/* Collapse button */
+.panel__collapse-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-cream);
+  z-index: 20;
+  transition: all var(--transition-fast);
+}
+
+.panel__collapse-btn:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-gold-bright);
+  border-color: var(--color-text-gold);
+}
+
+.panel__collapse-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.panel__collapse-btn--left {
+  right: -12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.panel__collapse-btn--right {
+  left: -12px;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Collapsed label (vertical text) */
+.panel__collapsed-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 1rem 0;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-text-gold);
+  text-transform: uppercase;
+}
+
+.panel__collapsed-label span {
+  writing-mode: horizontal-tb;
+}
+
+/* Resize handles */
+.panel__resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  cursor: col-resize;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel__resize-handle--right {
+  right: -5px;
+}
+
+.panel__resize-handle--left {
+  left: -5px;
+}
+
+.panel__resize-handle:hover .resize-handle__line,
+.panel__resize-handle:active .resize-handle__line {
+  background: var(--color-text-gold);
+  box-shadow: 0 0 10px var(--color-text-gold);
+  width: 3px;
+}
+
+.resize-handle__line {
+  width: 2px;
+  height: 80px;
+  background: var(--color-border);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .app-header__level {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .theme-toggle {
+    position: static;
+    transform: none;
+  }
+  
+  .app-header {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+  }
+  
+  .panel--left,
+  .panel--right {
+    width: 100% !important;
+    flex: none !important;
+    max-height: 35vh;
+    border: none;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  
+  .panel__collapse-btn,
+  .panel__resize-handle {
+    display: none;
+  }
+  
+  .panel--right {
+    display: none;
+  }
+}

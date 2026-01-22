@@ -1,0 +1,148 @@
+.quest-group-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Search */
+.quest-search {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.75rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.quest-search--focused {
+  border-color: var(--color-text-gold);
+  box-shadow: 0 0 0 2px var(--glow-gold);
+}
+
+.quest-search__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.quest-search__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-cream);
+}
+
+.quest-search__input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.quest-search__input::placeholder {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.quest-search__clear {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.quest-search__clear:hover {
+  color: var(--color-text-gold-bright);
+}
+
+.quest-search__clear svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Groups container - scrollable */
+.quest-groups {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+/* Individual group */
+.quest-group {
+  margin-bottom: 0.25rem;
+}
+
+.quest-group__items {
+  padding: 0.3rem 0;
+}
+
+.quest-group__empty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.quest-group__add-btn {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text-gold);
+  text-transform: uppercase;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.quest-group__add-btn:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-text-gold);
+}
+
+/* Add group button */
+.add-group-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem;
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.add-group-btn:hover {
+  color: var(--color-text-gold-bright);
+  border-color: var(--color-text-gold);
+  background: var(--color-bg-hover);
+}
+
+.add-group-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.add-group-btn span {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

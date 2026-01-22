@@ -1,0 +1,38 @@
+.expansion-badge {
+  --badge-color: var(--color-accent-red);
+  
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  min-width: 180px;
+}
+
+.expansion-badge__border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--badge-color);
+  opacity: 0.8;
+}
+
+.expansion-badge__border svg {
+  width: 100%;
+  height: 100%;
+}
+
+.expansion-badge__text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--badge-color);
+  text-shadow: 0 0 10px rgba(139, 35, 35, 0.3);
+}
+

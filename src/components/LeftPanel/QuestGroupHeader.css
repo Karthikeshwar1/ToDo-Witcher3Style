@@ -1,0 +1,111 @@
+.quest-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0.6rem;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid var(--color-divider);
+  transition: background-color var(--transition-fast);
+  background: var(--color-bg-card);
+}
+
+.quest-group-header:hover {
+  background: var(--color-bg-hover);
+}
+
+.quest-group-header:focus-visible {
+  outline: 2px solid var(--color-text-gold);
+  outline-offset: -2px;
+}
+
+.quest-group-header__left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quest-group-header__chevron {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text-cream);
+  transition: transform var(--transition-normal), color var(--transition-fast);
+}
+
+.quest-group-header--collapsed .quest-group-header__chevron {
+  transform: rotate(-90deg);
+}
+
+.quest-group-header:hover .quest-group-header__chevron {
+  color: var(--color-text-gold-bright);
+}
+
+.quest-group-header__title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-cream);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quest-group-header__icon {
+  font-size: 1.1rem;
+}
+
+.quest-group-header__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quest-group-header__count {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.quest-group-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.quest-group-header:hover .quest-group-header__actions {
+  opacity: 1;
+}
+
+.quest-group-header__btn {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  color: var(--color-text-cream);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.quest-group-header__btn:hover {
+  color: var(--color-text-gold-bright);
+  background: var(--color-bg-selected);
+}
+
+.quest-group-header__btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.quest-group-header__accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0.6;
+}
