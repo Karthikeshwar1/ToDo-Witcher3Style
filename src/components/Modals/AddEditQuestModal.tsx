@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useQuests } from '../../context/QuestContext'
 import Modal from './Modal'
 import type { Quest, Subtask } from '../../types/quest.types'
